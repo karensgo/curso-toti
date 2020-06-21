@@ -1,0 +1,30 @@
+//part I: ordenar decescentemente a lista
+
+
+let class1 = ['yasmin', 'isadora', 'benedita', 'brenda', 'luiza', 'fatima', 'caio', 'teresinha', 'hugo', 'zeca', 'catarina', 'emanuel', 'marcelo', 'claudio', 'marina', 'isabela', 'anthony', 'rebeca', 'filipe', 'laís', 'vinicius', 'helena', 'elisa', 'rodrigo', 'geraldo', 'yuri', 'marcio']
+let class2 = ['benedita', 'elisa', 'emanuel', 'rodrigo', 'filipe', 'marcio', 'teresinha', 'laís', 'vinicius', 'marina', 'catarina', 'luiza', 'marcelo', 'rebeca', 'hugo', 'geraldo', 'zeca', 'caio', 'anthony', 'yasmin', 'claudio']
+let class3 = ['isadora', 'isabela', 'laís', 'claudio', 'catarina', 'zeca', 'teresinha', 'emanuel', 'marcio', 'fatima', 'rodrigo', 'luiza', 'brenda', 'marina', 'marcelo', 'benedita', 'rebeca', 'filipe', 'helena', 'elisa', 'hugo', 'geraldo']
+
+
+
+function quicksortReverse(array) {
+  if (array.length <= 1) {
+    return array
+  }
+
+  const pivot = array[0]
+  const left = []
+  const right = []
+
+  for (let i = 1; i < array.length; i++) {
+    array[i] > pivot ? left.push(array[i]) : right.push(array[i])
+  }
+
+  return quicksortReverse(left).concat(pivot, quicksortReverse(right))
+}
+
+class1 = quicksortReverse(class1)
+class2 = quicksortReverse(class2)
+class3 = quicksortReverse(class3)
+
+console.log(class1, class2, class3)
